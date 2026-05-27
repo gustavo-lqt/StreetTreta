@@ -1,0 +1,479 @@
+/* =========================================
+   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================= */
+:root {
+    /* Paleta de Cores */
+    --bg-dark: #020024;       /* Azul muito escuro (fundo principal) */
+    --bg-panel: #090979;      /* Azul intermediário (fundo dos cards) */
+    --bg-highlight: rgba(255, 255, 255, 0.05); /* Fundo translúcido para destaques */
+    
+    --accent-red: #D90429;    /* Vermelho sangue (detalhes e botões) */
+    --accent-yellow: #FFD700; /* Amarelo dourado (títulos importantes) */
+    --accent-orange: #f39c12; /* Laranja (bordas especiais) */
+    
+    --text-white: #ffffff;
+    --text-gray: #ecf0f1;     /* Branco gelo */
+
+    /* Tipografia */
+    --arcade-font: 'Press Start 2P', cursive; /* Fonte pixelada */
+    --body-font: 'Roboto', sans-serif;        /* Fonte padrão (agora usada menos) */
+}
+
+/* --- CORREÇÃO DO MENU COBRINDO O TÍTULO --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--body-font);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* =========================================
+   HEADER (CABEÇALHO)
+   ========================================= */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 4px solid var(--accent-red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 80px; 
+    border: none;
+    border-radius: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-family: var(--arcade-font); 
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-red);
+    text-shadow: 2px 2px 0px #fff;
+}
+
+/* =========================================
+   HERO SECTION (BANNER PRINCIPAL)
+   ========================================= */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/logostreettreta.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 2px solid var(--accent-red);
+}
+
+.hero h1 {
+    font-family: var(--arcade-font);
+    font-size: 2.5rem;
+    color: var(--accent-yellow);
+    margin-bottom: 20px;
+    text-shadow: 4px 4px var(--accent-red);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-start {
+    background-color: var(--accent-red);
+    color: var(--text-white);
+    font-family: var(--arcade-font);
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* =========================================
+   ESTILOS GERAIS DE TÍTULOS
+   ========================================= */
+.section-title {
+    font-family: var(--arcade-font);
+    text-align: center;
+    color: var(--accent-red);
+    margin: 40px 0;
+    text-shadow: 2px 2px 0px #fff;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.subsection-title {
+    font-family: var(--arcade-font);
+    text-align: center;
+    margin-bottom: 30px;
+    color: #bdc3c7;
+    font-size: 1rem;
+}
+
+/* =========================================
+   SEÇÃO DE EVENTOS (BANNERS)
+   ========================================= */
+
+/* Container base dos cards de evento */
+.fight-highlight {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+/* --- Card 1: Resultado (Luva) --- */
+.result-card {
+    background-color: rgba(0,0,0,0.5);
+    border: 2px solid var(--accent-red);
+}
+
+.result-card h3 {
+    color: var(--accent-yellow);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: var(--arcade-font);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- Card 2: Próximo Combate (Main Event) --- */
+.upcoming-card {
+    background-color: var(--bg-highlight);
+    border: 3px solid var(--accent-orange);
+}
+
+.upcoming-title {
+    color: var(--accent-red);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #000;
+    font-family: var(--arcade-font);
+    line-height: 1.6;
+}
+
+/* --- Imagens e Textos dos Eventos --- */
+.event-img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Borda especial dourada para o Main Event */
+.shadow-gold {
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+    border: 2px solid #fff;
+    max-width: 900px;
+}
+
+/* ATUALIZADO: Texto descritivo dos eventos (Pixelado e Branco) */
+.fight-highlight p, 
+.event-info p {
+    font-family: var(--arcade-font); /* Alterado para Pixelada */
+    font-size: 0.8rem; /* Ajustei levemente pois a fonte pixelada é grande */
+    line-height: 1.8; 
+    color: var(--text-white); /* Alterado para Branco */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    text-shadow: 2px 2px 0px #000; /* Sombra preta para leitura no branco */
+}
+
+/* Metadados (Data e Local) */
+.event-meta {
+    font-size: 0.8rem !important;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--accent-yellow) !important;
+    font-family: var(--arcade-font) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   GRID DE LUTADORES
+   ========================================= */
+.fighters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.fighter-card {
+    background-color: var(--bg-panel);
+    border: 3px solid var(--text-white);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.fighter-card:hover {
+    transform: scale(1.05); 
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 15px var(--accent-red);
+}
+
+.fighter-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    image-rendering: pixelated; /* Mantém a arte pixelada nítida */
+}
+
+.fighter-card h3 {
+    margin-top: 10px;
+    font-family: var(--arcade-font);
+    font-size: 0.8rem;
+    color: var(--accent-yellow);
+}
+
+/* =========================================
+   RANKING TABLE
+   ========================================= */
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-panel);
+    font-family: var(--arcade-font);
+    font-size: 0.7rem;
+    margin-bottom: 40px;
+}
+
+.ranking-table th, .ranking-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+.ranking-table th {
+    background-color: var(--accent-red);
+    color: var(--text-white);
+    text-transform: uppercase;
+}
+
+.ranking-table tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 4px solid var(--accent-red);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .fighters-grid {
+        grid-template-columns: 1fr; /* 1 Coluna no celular */
+    }
+    
+    .header-content {
+        flex-direction: column;
+    }
+    
+    .main-nav ul {
+        margin-top: 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .event-img {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   PÁGINA DE PERFIL (LUTADOR.HTML)
+   ========================================= */
+.fighter-profile-section {
+    padding: 40px 0;
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card {
+    background-color: var(--bg-panel);
+    border: 4px solid var(--text-white);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.fighter-name-title {
+    font-family: var(--arcade-font);
+    color: var(--accent-yellow);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px var(--accent-red);
+    text-transform: uppercase;
+}
+
+.banner-container {
+    margin-bottom: 30px;
+    border: 3px solid var(--accent-orange);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.fighter-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated; 
+}
+
+.fighter-stats-box {
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+.stat-nickname {
+    font-family: var(--arcade-font);
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.stat-row {
+    font-family: var(--arcade-font);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    color: var(--accent-red);
+}
+
+.stat-value {
+    color: var(--text-white);
+}
+
+.description-box p {
+    font-family: var(--arcade-font); 
+    font-size: 0.8rem; 
+    line-height: 2.0; 
+    color: var(--text-white);
+    max-width: 750px;
+    margin: 0 auto 30px auto;
+    text-shadow: 2px 2px 0px #000; 
+    letter-spacing: 1px; 
+}
+
+.btn-back {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: var(--text-white);
+    font-family: var(--arcade-font);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    font-size: 0.8rem;
+}
+
+.btn-back:hover {
+    transform: scale(1.1);
+    background-color: #c0392b;
+}
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DO VÍDEO (VIDEO-CARD)
+   ========================================= */
+
+.video-card {
+    margin-top: 30px;
+    border: 3px dashed var(--accent-yellow);
+    background-color: rgba(0,0,0,0.6);
+}
+
+.video-card h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: var(--arcade-font);
+    font-size: 0.9rem;
+}
+
+.video-container {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.video-card p {
+    font-family: var(--arcade-font);
+    font-size: 0.8rem;
+    margin-top: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 0px #000;
+}

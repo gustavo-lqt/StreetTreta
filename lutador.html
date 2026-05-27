@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Lutador | Street Treta</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="assets/logostreettreta.png" alt="Logo Street Treta" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#eventos">Eventos</a></li>
+                    <li><a href="index.html#lutadores">Lutadores</a></li>
+                    <li><a href="index.html#ranking">Ranking</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="fighter-profile-section">
+        <div class="container">
+            <div class="profile-card">
+                <h1 id="fighter-name" class="fighter-name-title">NOME DO LUTADOR</h1>
+                
+                <div class="banner-container">
+                    <img id="fighter-image" src="" alt="Banner do Lutador" class="fighter-banner-img">
+                </div>
+
+                <div class="fighter-stats-box">
+                    <h3 id="fighter-nickname" class="stat-nickname">"Alcunha"</h3>
+                    
+                    <div class="stat-row">
+                        <span class="stat-label">Golpe Especial:</span>
+                        <span id="fighter-move" class="stat-value">Nome do Golpe</span>
+                    </div>
+
+                    <div class="description-box">
+                        <p id="fighter-desc">Descrição do lutador...</p>
+                    </div>
+
+                    <a href="index.html#lutadores" class="btn-back">VOLTAR PARA SELEÇÃO</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Street Treta - Desenvolvido para o Desafio Acadêmico</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Pequeno script para rodar apenas nesta página e carregar os dados
+        document.addEventListener('DOMContentLoaded', loadFighterProfile);
+    </script>
+</body>
+</html>

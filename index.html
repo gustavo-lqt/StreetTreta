@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Treta | O Torneio Supremo</title>
+    <link rel="icon" href="assets/logostreettreta.png" type="image/png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <img src="assets/logostreettreta.png" alt="Logo Street Treta" class="logo-img">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#lutadores">Lutadores</a></li>
+                    <li><a href="#ranking">Ranking</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>ROUND 1... FIGHT!</h1>
+            <p>Escolha seu personagem e entre na arena política e cultural mais caótica do mundo.</p>
+            <button class="btn-start" onclick="scrollToFighters()">PRESS START</button>
+        </div>
+    </section>
+
+    <section id="eventos" class="section-dark">
+        <div class="container">
+            <h3 class="subsection-title">Próximos Combates</h3>
+
+            <div class="fight-highlight upcoming-card">
+                <h3 class="upcoming-title">Main Event: O Acerto de Contas</h3>
+
+                <img src="assets/bolsolulafight.png" alt="Lula vs Bolsonaro - A Batalha Final" class="event-img shadow-gold">
+
+                <div class="event-info">
+                    <p class="event-meta">
+                        📅 Data: 25/12/2025 | 📍 Local: Em frente ao Palácio do Planalto
+                    </p>
+                    <p>
+                        Chegou a hora da verdade. Esqueça as urnas, esqueça os debates! No dia de Natal, o céu de
+                        Brasília vai fechar para o confronto definitivo entre <strong>Lula "O Companheiro"</strong> e
+                        <strong>Bolsonaro "O Capitão"</strong>. Com o Palácio do Planalto ao fundo e a nação dividida na
+                        plateia, eles subirão ao ringue para resolver suas diferenças da maneira antiga: na porrada
+                        pixelada! Quem levará o cinturão da presidência do Street Treta? Prepare a pipoca, porque essa
+                        batalha vai entrar para a história!
+                    </p>
+                </div>
+            </div>
+            <h2 class="section-title">Central de Eventos</h2>
+
+            <div class="fight-highlight result-card">
+                <h3>Último Resultado: O IMPOSSÍVEL ACONTECEU!</h3>
+                <img src="assets/bannerluvawin.png" alt="Luva vence Trump" class="event-img">
+                <p>
+                    Foi um duelo eletrizante na lendária arena de terra batida! Trump tentou construir uma defesa
+                    sólida, mas não contava com a ginga imprevisível do Luva de Pedreiro. No momento decisivo, Luva
+                    soltou um <strong>"RECEBA!"</strong> ensurdecedor e conectou um chute aéreo indefensável. O
+                    bilionário foi à lona. O Brasil venceu!
+                </p>
+            </div>
+
+            <div class="fight-highlight video-card">
+                <h3>A ASTÚCIA VENCEU DE NOVO!</h3>
+                
+                <div class="video-container">
+                    <video width="100%" controls>
+                        <source src="assets/fightvideo.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                </div>
+
+                <p>
+                    <strong>Testemunhe</strong> o momento exato em que a Marreta Biônica superou a barreira do vento estocado! Dilma tentou invocar a mandioca sagrada, mas seus movimentos foram friamente calculados pelo Vermelhinho. Foi um <em>K.O.</em> tão rápido que ninguém teve paciência, muito menos a astúcia!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="lutadores" class="fighters-section">
+        <div class="container">
+            <h2 class="section-title">Selecione seu Lutador</h2>
+
+            <div class="fighters-grid">
+
+                <div class="fighter-card" onclick="openFighterPage('moraes')">
+                    <img src="assets/moraeslutador.png" alt="Moraes">
+                    <h3>Moraes</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('lula')">
+                    <img src="assets/lulalutador.png" alt="Lula">
+                    <h3>Lula</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('bolsonaro')">
+                    <img src="assets/bolsonarolutador.png" alt="Bolsonaro">
+                    <h3>Bolsonaro</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('trump')">
+                    <img src="assets/trumplutador.png" alt="Trump">
+                    <h3>Trump</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('dilma')">
+                    <img src="assets/dilmalutadora.png" alt="Dilma">
+                    <h3>Dilma</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('chapolin')">
+                    <img src="assets/chapolinlutador.png" alt="Chapolin">
+                    <h3>Chapolin</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('messi')">
+                    <img src="assets/messilutador.png" alt="Messi">
+                    <h3>Messi</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('cristiano')">
+                    <img src="assets/cristianolutador.png" alt="Cristiano">
+                    <h3>Cristiano</h3>
+                </div>
+
+                <div class="fighter-card" onclick="openFighterPage('luva')">
+                    <img src="assets/luvalutador.png" alt="Luva">
+                    <h3>Luva</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ranking" class="ranking-section">
+        <div class="container">
+            <h2 class="section-title">Ranking Global</h2>
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Lutador</th>
+                        <th>Vitórias</th>
+                        <th>K.O.s</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Chapolin</td>
+                        <td>99</td>
+                        <td>99</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Luva de Pedreiro</td>
+                        <td>85</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cristiano</td>
+                        <td>80</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Messi</td>
+                        <td>78</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Trump</td>
+                        <td>70</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Lula</td>
+                        <td>68</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Bolsonaro</td>
+                        <td>65</td>
+                        <td>35</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Moraes</td>
+                        <td>50</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Dilma</td>
+                        <td>45</td>
+                        <td>12</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Street Treta - Desenvolvido para o Desafio Acadêmico</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
